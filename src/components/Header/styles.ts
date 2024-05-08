@@ -12,10 +12,12 @@ export const Fundo = styled.div<Props>`
 
     .container {
         display: flex;
+
         ${props => props.type === "home" ? "flex-direction: column;" : (
             "font-weight: bold;"+
             "font-size: 18px;"
         )}
+        
         align-items: center;
         background-color: transparent;
         justify-content: ${props => props.type === "home" ? "space-between" : "space-between"};
@@ -34,4 +36,13 @@ export const TituloHome = styled.h1`
 export const Voltar = styled(Link)`
     text-decoration: none;
     color: ${cores.vermelho};
+`
+
+export const CartButton = styled.a`
+    display: flex;
+    cursor: pointer;
+
+    img {
+        margin-left: 16px;
+    }
 `

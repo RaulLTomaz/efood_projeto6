@@ -11,6 +11,12 @@ export const Card = styled.div`
     justify-content: space-between;
 `
 
+export const CardContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 export const Image = styled.img`
     max-width: 304px;
     width: 100%;

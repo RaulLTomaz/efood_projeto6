@@ -1,4 +1,4 @@
-import { Botao, Card, Descricao, Image, Titulo } from "./styles"
+import { Botao, Card, CardContent, Descricao, Image, Titulo } from "./styles"
 import { ComidaModel } from "../../pages/Home"
 
 type Props = {
@@ -7,13 +7,13 @@ type Props = {
 
 const Comida = ({ comida }: Props) => (
     <Card>
-        <div>
+        <CardContent>
             <Image src={comida.foto} alt={comida.nome} />
             <Titulo>{comida.nome}</Titulo>
             <Descricao>
                 {comida.descricao}
             </Descricao>
-        </div>
+        </CardContent>
         <div>
             <Botao>Adicionar ao Carrinho</Botao>
         </div>

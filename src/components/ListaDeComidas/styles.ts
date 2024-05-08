@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles";
+import { breakpoints, cores } from "../../styles";
 
 export const Container = styled.div`
     margin-top: 56px;
@@ -14,6 +14,14 @@ export const Lista = styled.ul`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 32px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+        grid-template-columns: 1fr;
+    }
 `
 
 export const Modal = styled.div`
@@ -44,10 +52,15 @@ export const Modal = styled.div`
 export const ModalContainer = styled.div`
     max-width: 1024px;
     width: 100%;
-    height: 344px;
+    max-height: 344px;
+    height: 100%;
     position: relative;
     background-color: ${cores.vermelho};
     z-index: 1;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        max-height: 600px;
+    }
 `
 
 export const FecharImg = styled.img`
@@ -62,6 +75,10 @@ export const ModalContent = styled.div`
     width: 100%;
     height: 100%;
     padding: 32px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+        display: block;
+    }
 `
 
 export const ImagemModal = styled.img`
