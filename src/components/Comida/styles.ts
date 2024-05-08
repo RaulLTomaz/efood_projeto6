@@ -6,6 +6,16 @@ export const Card = styled.div`
     background-color: ${cores.vermelho};
     color: ${cores.bege};
     padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+`
+
+export const Image = styled.img`
+    max-width: 304px;
+    width: 100%;
+    height: 167px;
+    object-fit: cover;
 `
 
 export const Titulo = styled.h3`

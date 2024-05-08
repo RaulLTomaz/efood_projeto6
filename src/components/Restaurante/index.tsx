@@ -1,9 +1,10 @@
-import { Botao, Card, Descricao, Estrela, Info, TituloEEstrela } from "./styles"
+import { Botao, Card, Descricao, Estrela, Image, Info, TituloEEstrela } from "./styles"
 import estrela from "../../assets/images/estrela.png"
 import Tag from "../Tag"
 import { Link } from "react-router-dom"
 
 type Props = {
+    id: number
     nome: string
     descricao: string
     estrelas: number
@@ -12,9 +13,9 @@ type Props = {
     destaque: boolean
 }
 
-const Restaurante = ({ nome, descricao, estrelas, tipo, imagem, destaque }: Props) => (
+const Restaurante = ({ id, nome, descricao, estrelas, tipo, imagem, destaque }: Props) => (
     <Card>
-        <img src={imagem} alt={nome} />
+        <Image src={imagem} alt={nome} />
         <Info>
             {destaque && <Tag>Destaque da Semana</Tag>}
             <Tag>{tipo}</Tag>
@@ -26,7 +27,7 @@ const Restaurante = ({ nome, descricao, estrelas, tipo, imagem, destaque }: Prop
         <Descricao>
             {descricao}
         </Descricao>
-        <Link to="/perfil">
+        <Link to={`/perfil/${id}`}>
             <Botao>Sabia Mais</Botao>
         </Link>
     </Card>

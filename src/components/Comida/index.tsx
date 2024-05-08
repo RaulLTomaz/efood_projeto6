@@ -1,20 +1,22 @@
-import { Botao, Card, Descricao, Titulo } from "./styles"
-import pizza from "../../assets/images/pizza.png"
+import { Botao, Card, Descricao, Image, Titulo } from "./styles"
+import { ComidaModel } from "../../pages/Home"
 
 type Props = {
-    nome: string
-    descricao: string
-    imagem: string
+    comida: ComidaModel
 }
 
-const Comida = ({ nome, descricao, imagem }: Props) => (
+const Comida = ({ comida }: Props) => (
     <Card>
-        <img src={imagem} alt={nome} />
-        <Titulo>{nome}</Titulo>
-        <Descricao>
-            {descricao}
-        </Descricao>
-        <Botao>Adicionar ao Carrinho</Botao>
+        <div>
+            <Image src={comida.foto} alt={comida.nome} />
+            <Titulo>{comida.nome}</Titulo>
+            <Descricao>
+                {comida.descricao}
+            </Descricao>
+        </div>
+        <div>
+            <Botao>Adicionar ao Carrinho</Botao>
+        </div>
     </Card>
 )
 

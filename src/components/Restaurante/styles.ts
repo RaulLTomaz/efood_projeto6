@@ -3,7 +3,7 @@ import { cores } from "../../styles";
 import { TagContainer } from "../Tag/styles";
 
 export const Card = styled.div`
-    height: 400px;
+    height: 100%;
     border: 1px solid ${cores.vermelho};
     background-color: #fff;
     position: relative;
@@ -52,4 +52,11 @@ export const Info = styled.div`
     ${TagContainer} {
         margin-left: 8px;
     }
+`
+
+export const Image = styled.img`
+    max-width: 472px;
+    width: 100%;
+    height: 217px;
+    object-fit: cover;
 `
