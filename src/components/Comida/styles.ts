@@ -3,6 +3,7 @@ import { cores } from "../../styles";
 
 export const Card = styled.div`
     width: 100%;
+    height: 100%;
     background-color: ${cores.vermelho};
     color: ${cores.bege};
     padding: 8px;

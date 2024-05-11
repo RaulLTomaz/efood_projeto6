@@ -1,5 +1,4 @@
 import { Botao, Card, CardContent, Descricao, Image, Titulo } from "./styles"
-import { ComidaModel } from "../../pages/Home"
 
 type Props = {
     comida: ComidaModel

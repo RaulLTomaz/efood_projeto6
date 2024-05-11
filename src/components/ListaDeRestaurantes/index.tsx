@@ -1,4 +1,3 @@
-import { RestauranteModel } from "../../pages/Home"
 import Restaurante from "../Restaurante"
 import { Container } from "./styles"
 

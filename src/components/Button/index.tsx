@@ -5,11 +5,12 @@ export type Props = {
     to?: string
     onClick?: () => void
     children: string
+    type: string
 }
 
-const Button = ({ children, title, to, onClick }: Props) => {
+const Button = ({ children, title, to, onClick, type }: Props) => {
     return (
-        <ButtonContainer type="button" title={title} onClick={onClick}>
+        <ButtonContainer type={type} title={title} onClick={onClick}>
             {children}
         </ButtonContainer>
     )

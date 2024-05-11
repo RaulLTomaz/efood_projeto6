@@ -1,20 +1,13 @@
 import { useState } from "react"
-import { ComidaModel, RestauranteModel } from "../../pages/Home"
 import Comida from "../Comida"
 import { Container, FecharImg, ImagemModal, Lista, Modal, ModalBotao, ModalContainer, ModalContent, ModalDescricao, ModalTitulo } from "./styles"
 import fechar from "../../assets/images/fechar.png"
 import { useDispatch } from "react-redux"
 import { add, open } from "../../store/reducers/cart"
+import { parseToBrl } from "../../utils"
 
 type Props = {
     restaurante: RestauranteModel
-}
-
-export const formataPreco = (price: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-        style: 'currency',
-        currency: 'BRL'
-    }).format(price)
 }
 
 const ListaDeComidas = ({ restaurante }: Props) => {
@@ -23,15 +16,17 @@ const ListaDeComidas = ({ restaurante }: Props) => {
 
     const dispatch = useDispatch()
 
-    const addToCart = () => {
-        dispatch(add(comidaModal!))
-        dispatch(open())
-    }
-
     const fechaModal = () => {
         setModal(false)
         setComidaModal(undefined)
     }
+
+    const addToCart = () => {
+        dispatch(add(comidaModal!))
+        dispatch(open())
+        fechaModal()
+    }
+
 
     return (
         <>
@@ -61,7 +56,7 @@ const ListaDeComidas = ({ restaurante }: Props) => {
                                     {comidaModal.descricao}<br/><br/>
                                     Serve: de {comidaModal.porcao}
                                 </ModalDescricao>
-                                <ModalBotao onClick={addToCart}>Adicionar ao Carrinho - {formataPreco(comidaModal.preco)}</ModalBotao>
+                                <ModalBotao onClick={addToCart}>Adicionar ao Carrinho - {parseToBrl(comidaModal.preco)}</ModalBotao>
                             </div>
                         </ModalContent>
                     )}

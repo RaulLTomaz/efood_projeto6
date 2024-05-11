@@ -41,6 +41,14 @@ export const SideBar = styled.aside`
         font-size: 14px;
         font-weight: bold;
     }
+
+    .empty-text {
+        font-size: 14px;
+        line-height: 22px;
+        color: ${cores.bege};
+        text-align: center;
+        font-weight: bold;
+    }
 `
 
 export const CartItem = styled.li`
